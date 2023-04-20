@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/MedDoc-front/static/css/main.7acaea2f.css",
+    "main.css": "/MedDoc-front/static/css/main.85d8607a.css",
     "main.js": "/MedDoc-front/static/js/main.07d3183d.js",
     "index.html": "/MedDoc-front/index.html",
-    "main.7acaea2f.css.map": "/MedDoc-front/static/css/main.7acaea2f.css.map",
+    "main.85d8607a.css.map": "/MedDoc-front/static/css/main.85d8607a.css.map",
     "main.07d3183d.js.map": "/MedDoc-front/static/js/main.07d3183d.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
+    "static/css/main.85d8607a.css",
     "static/js/main.07d3183d.js"
   ]
 }
