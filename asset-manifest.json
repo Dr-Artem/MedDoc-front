@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MedDoc-front/static/css/main.8ecd47b0.css",
-    "main.js": "/MedDoc-front/static/js/main.61edd2af.js",
+    "main.css": "/MedDoc-front/static/css/main.bb051bf5.css",
+    "main.js": "/MedDoc-front/static/js/main.45ca8a4b.js",
     "static/media/meet.png": "/MedDoc-front/static/media/meet.b49f07d494c26dd6ef32.png",
     "static/media/meet_mobile.png": "/MedDoc-front/static/media/meet_mobile.e5d5e588982f17ec32cc.png",
     "static/media/card.png": "/MedDoc-front/static/media/card.5b81981e37905248a4f0.png",
@@ -12,12 +12,14 @@
     "static/media/Medic@2x.png": "/MedDoc-front/static/media/Medic@2x.36717d3380f1b5430006.png",
     "static/media/Medic.png": "/MedDoc-front/static/media/Medic.bba6bd2aba940cdc6a92.png",
     "static/media/sergey.png": "/MedDoc-front/static/media/sergey.45dd395e67f63d0e9937.png",
+    "static/media/check.svg": "/MedDoc-front/static/media/check.36e93647c1b936c4cac3e8214fca344f.svg",
     "index.html": "/MedDoc-front/index.html",
-    "main.8ecd47b0.css.map": "/MedDoc-front/static/css/main.8ecd47b0.css.map",
-    "main.61edd2af.js.map": "/MedDoc-front/static/js/main.61edd2af.js.map"
+    "static/media/pen.svg": "/MedDoc-front/static/media/pen.0a7bb2820606b2642759be1924049844.svg",
+    "main.bb051bf5.css.map": "/MedDoc-front/static/css/main.bb051bf5.css.map",
+    "main.45ca8a4b.js.map": "/MedDoc-front/static/js/main.45ca8a4b.js.map"
   },
   "entrypoints": [
-    "static/css/main.8ecd47b0.css",
-    "static/js/main.61edd2af.js"
+    "static/css/main.bb051bf5.css",
+    "static/js/main.45ca8a4b.js"
   ]
 }
