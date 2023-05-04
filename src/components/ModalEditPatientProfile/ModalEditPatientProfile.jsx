@@ -77,8 +77,16 @@ const ModalEditPatientProfile = ({ open, setApp }) => {
     const handleSubmit = event => {
         console.log(formData);
         event.preventDefault();
-
-        dispatch(updateUserInfo(formData));
+        try {
+            schema.validateSync(formData, { abortEarly: false });
+            dispatch(updateUserInfo(formData));
+        } catch (error) {
+            const errors = error.inner.reduce((acc, curr) => {
+                acc[curr.path] = curr.message;
+                return acc;
+            }, {});
+            setErrors(errors);
+        }
     };
     return (
         <Modal open={open} onClose={() => setApp(!open)}>
