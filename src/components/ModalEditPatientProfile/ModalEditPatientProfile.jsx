@@ -8,14 +8,16 @@ import dayjs from 'dayjs';
 import { useState } from 'react';
 import * as yup from 'yup';
 import s from './ModalEditPatientProfile.module.css';
+import { updateUserInfo } from 'redux/info/operation';
+import { useDispatch } from 'react-redux';
 
 const regex = /^\+\d{1,3}\s?s?\d{1,}\s?\d{1,}\s?\d{1,}$/;
 
 const schema = yup.object().shape({
-    phone: yup.string().matches(regex, 'Phone number is not valid').required('Phone is a required field'),
+    number: yup.string().matches(regex, 'Phone number is not valid').required('Phone is a required field'),
     name: yup.string().required('Name is required'),
     gender: yup.string().required('Gender is required'),
-    date: yup.string().required('Date is required'),
+    birthday: yup.string().required('Date is required'),
 });
 
 const style = {
@@ -33,27 +35,16 @@ const style = {
 const ModalEditPatientProfile = ({ open, setApp }) => {
     const [selectedDate, setSelectedDate] = useState(dayjs);
 
-    // function handleDateChange(date) {
-    //     setSelectedDate(date);
-    // }
-
-    // function handleDateChange(date) {
-    //     setFormData(prevFormData => ({
-    //         ...prevFormData,
-    //         date: date.format('YYYY-MM-DD'),
-    //     }));
-    // }
-
     const [formData, setFormData] = useState({
         name: '',
         gender: '',
-        dateOfBirth: '',
-        phone: '',
+        birthday: '',
+        number: '',
     });
 
     function handleDateChange(date) {
         setSelectedDate(date);
-        setFormData(prevState => ({ ...prevState, dateOfBirth: date.format('YYYY-MM-DD') }));
+        setFormData(prevState => ({ ...prevState, birthday: date.format('YYYY-MM-DD') }));
     }
 
     const handleInputChange = event => {
@@ -67,19 +58,27 @@ const ModalEditPatientProfile = ({ open, setApp }) => {
 
     const [errors, setErrors] = useState({});
 
+    const dispatch = useDispatch();
+
+    // const handleSubmit = event => {
+    //     event.preventDefault();
+    //     console.log(formData);
+    //     try {
+    //         schema.validateSync(formData, { abortEarly: false });
+    //         // send data to backend
+    //     } catch (error) {
+    //         const errors = error.inner.reduce((acc, curr) => {
+    //             acc[curr.path] = curr.message;
+    //             return acc;
+    //         }, {});
+    //         setErrors(errors);
+    //     }
+
     const handleSubmit = event => {
-        event.preventDefault();
         console.log(formData);
-        try {
-            schema.validateSync(formData, { abortEarly: false });
-            // send data to backend
-        } catch (error) {
-            const errors = error.inner.reduce((acc, curr) => {
-                acc[curr.path] = curr.message;
-                return acc;
-            }, {});
-            setErrors(errors);
-        }
+        event.preventDefault();
+
+        dispatch(updateUserInfo(formData));
     };
     return (
         <Modal open={open} onClose={() => setApp(!open)}>
@@ -145,20 +144,20 @@ const ModalEditPatientProfile = ({ open, setApp }) => {
                             </LocalizationProvider>
                         </li>
                         <li>
-                            <InputLabel variant="standard" color="primary" htmlFor="phone">
+                            <InputLabel variant="standard" color="primary" htmlFor="number">
                                 Number
                             </InputLabel>
                             <Input
-                                value={formData.phone}
+                                value={formData.number}
                                 onChange={handleInputChange}
                                 variant="primary"
                                 color="primary"
                                 type="tel"
                                 disableUnderline
-                                id="phone"
-                                name="phone"
-                                error={Boolean(errors.phone)}
-                                helperText={errors.phone}
+                                id="number"
+                                name="number"
+                                error={Boolean(errors.number)}
+                                helperText={errors.number}
                             />
                         </li>
                     </ul>
