@@ -60,20 +60,6 @@ const ModalEditPatientProfile = ({ open, setApp }) => {
 
     const dispatch = useDispatch();
 
-    // const handleSubmit = event => {
-    //     event.preventDefault();
-    //     console.log(formData);
-    //     try {
-    //         schema.validateSync(formData, { abortEarly: false });
-    //         // send data to backend
-    //     } catch (error) {
-    //         const errors = error.inner.reduce((acc, curr) => {
-    //             acc[curr.path] = curr.message;
-    //             return acc;
-    //         }, {});
-    //         setErrors(errors);
-    //     }
-
     const handleSubmit = event => {
         console.log(formData);
         event.preventDefault();
