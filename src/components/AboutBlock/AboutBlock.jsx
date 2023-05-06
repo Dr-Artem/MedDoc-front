@@ -1,18 +1,15 @@
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import IconButton from '@mui/material/IconButton';
-import { ExperienceBlock } from 'components/ExperienceBlock/ExperienceBlock';
 import React, { useState } from 'react';
 import css from './AboutBlock.module.css';
 
-export const AboutBlock = ({ doctorInfo }) => {
+export const AboutBlock = ({ about }) => {
     const [isVisitsVisible, setIsVisitsVisible] = useState(true);
 
     const handleArrowClick = () => {
         setIsVisitsVisible(!isVisitsVisible);
     };
-
-    console.log(doctorInfo.about);
 
     return (
         <div className={css.aboutBlock}>
@@ -20,26 +17,20 @@ export const AboutBlock = ({ doctorInfo }) => {
                 <h2 className={css.aboutTitle}>About </h2>
                 <div className={css.aboutArrowIcon}>
                     {!isVisitsVisible && (
-                        <IconButton>
-                            <KeyboardArrowDownIcon
-                                sx={{ color: '#111111', fontSize: '28px' }}
-                                onClick={handleArrowClick}
-                            />
+                        <IconButton onClick={handleArrowClick}>
+                            <KeyboardArrowDownIcon sx={{ color: '#111111', fontSize: '28px' }} />
                         </IconButton>
                     )}
                     {isVisitsVisible && (
-                        <IconButton>
-                            <KeyboardArrowUpIcon
-                                sx={{ color: '#111111', fontSize: '28px' }}
-                                onClick={handleArrowClick}
-                            />
+                        <IconButton onClick={handleArrowClick}>
+                            <KeyboardArrowUpIcon sx={{ color: '#111111', fontSize: '28px' }} />
                         </IconButton>
                     )}
                 </div>
             </div>
 
             <div className={css.aboutWrapper}>
-                {isVisitsVisible && doctorInfo && (
+                {isVisitsVisible && (
                     <>
                         <svg
                             className={css.aboutDot}
@@ -52,11 +43,10 @@ export const AboutBlock = ({ doctorInfo }) => {
                             <circle cx="4" cy="4" r="4" fill="#477577" />
                         </svg>
 
-                        <p className={css.aboutText}>{doctorInfo.about}</p>
+                        <p className={css.aboutText}>{about}</p>
                     </>
                 )}
             </div>
-            <ExperienceBlock doctorInfo={doctorInfo} />
         </div>
     );
 };

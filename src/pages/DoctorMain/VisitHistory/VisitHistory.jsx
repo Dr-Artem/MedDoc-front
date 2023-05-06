@@ -1,13 +1,13 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
 import { Box, Button, Divider, Grid, List, ListItem } from '@mui/material';
+import axios from 'axios';
+import moment from 'moment';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllVisits } from 'redux/visits/operation';
+import { selectAllVisits } from 'redux/visits/selectors';
 import { PagePagination } from '../../../components/PagePagination/PagePagination';
 import plug from '../../../images/ProfileBlock/plug.png';
 import css from './VisitHistory.module.css';
-import { getAllVisits } from 'redux/visits/operation';
-import { selectAllVisits } from 'redux/visits/selectors';
-import moment from 'moment';
-import axios from 'axios';
 
 const gridStyles = {
     marginLeft: '0',
@@ -40,7 +40,7 @@ const buttonStyle = {
     lineHeight: { xs: '1.17', md: '1.4' },
 };
 
-export const VisitHistory = () => {
+const VisitHistory = () => {
     const dispatch = useDispatch();
     const visits = useSelector(selectAllVisits);
     const [page, setPage] = useState(1);
@@ -137,3 +137,5 @@ export const VisitHistory = () => {
         </section>
     );
 };
+
+export default VisitHistory;

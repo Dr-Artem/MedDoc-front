@@ -4,13 +4,28 @@ import { ModalEditPatientResult } from 'components/ModalEditPatientResult/ModalE
 import { PatientMedcart } from 'components/PatientMedcart/PatientMedcart';
 import { PatientMedcartEdit } from 'components/PatientMedcartEdit/PatientMedcartEdit';
 import { ProfileBlockPatient } from 'components/ProfileBlockPatient/ProfileBlockPatient';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { RxPencil1 } from 'react-icons/rx';
+import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { getUserInfoById } from 'redux/info/operation';
 import style from './ListOfPatientsProfile.module.css';
 
 export const ListOfPatientsProfile = () => {
     const [editMedcart, setEditMedcart] = useState(true);
     const [open, setOpen] = useState(false);
+    const [userInfo, setUserInfo] = useState();
+    const dispatch = useDispatch();
+
+    const { id } = useParams();
+    console.log(id);
+
+    useEffect(() => {
+        dispatch(getUserInfoById(id)).then(({ payload }) => {
+            setUserInfo(payload);
+        });
+        // eslint-disable-next-line
+    }, [dispatch]);
 
     const analysis = [
         {
@@ -37,7 +52,7 @@ export const ListOfPatientsProfile = () => {
     return (
         <>
             <div className={style.PatientInformation}>
-                <ProfileBlockPatient />
+                {userInfo && <ProfileBlockPatient userInfo={userInfo} />}
                 <div className={style.PatientResults}>
                     <ul className={style.PatientResults_VisitRecord}>
                         <li>

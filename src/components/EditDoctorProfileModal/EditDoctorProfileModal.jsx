@@ -1,15 +1,15 @@
 import CloseIcon from '@mui/icons-material/Close';
-import { Box, Button, IconButton, TextField, InputLabel, Modal, Typography } from '@mui/material';
+import { Box, Button, IconButton, InputLabel, Modal, TextField, Typography } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { DemoItem } from '@mui/x-date-pickers/internals/demo';
-import { useFormik } from 'formik';
-import * as yup from 'yup';
 import dayjs from 'dayjs';
+import { useFormik } from 'formik';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateUserInfo } from 'redux/info/operation';
+import * as yup from 'yup';
 import css from '../EditDoctorProfileModal/EditDoctorProfileModule.module.css';
 
 const regex = /^\+\d{1,3}\s?s?\d{1,}\s?\d{1,}\s?\d{1,}$/;
@@ -46,7 +46,6 @@ const EditDoctorProfileModal = ({ open, setApp }) => {
 
     function handleDateChange(date) {
         setSelectedDate(date.format('DD.MM.YYYY'));
-        console.log(date.format('DD.MM.YYYY'));
     }
 
     const handleSubmitForm = values => {
@@ -59,7 +58,6 @@ const EditDoctorProfileModal = ({ open, setApp }) => {
             about: values.about,
         };
         dispatch(updateUserInfo(data));
-        console.log(dispatch(updateUserInfo(data)));
         setApp(!open);
     };
 

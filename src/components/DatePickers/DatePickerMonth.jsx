@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { IconButton, Divider } from '@mui/material';
-import { MobileDatePicker, LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Divider, IconButton } from '@mui/material';
+import { LocalizationProvider, MobileDatePicker } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs from 'dayjs';
+import { useState } from 'react';
 import css from './DatePickers.module.css';
 
 const iconButtonStyles = {
@@ -18,18 +18,18 @@ const iconButtonStyles = {
 export const DatePickerMonth = () => {
     const [selectedMonth, setSelectedMonth] = useState(dayjs(Date.now()).startOf('month'));
 
-    const handleMonthChange = (newDate) => {
-      setSelectedMonth(dayjs(newDate).startOf('month'));
+    const handleMonthChange = newDate => {
+        setSelectedMonth(dayjs(newDate).startOf('month'));
     };
-  
+
     const onBackClick = () => {
-      const newMonth = dayjs(selectedMonth).subtract(1, 'M');
-      setSelectedMonth(newMonth);
+        const newMonth = dayjs(selectedMonth).subtract(1, 'M');
+        setSelectedMonth(newMonth);
     };
-  
+
     const onForwardClick = () => {
-      const newMonth = dayjs(selectedMonth).add(1, 'M');
-      setSelectedMonth(newMonth);
+        const newMonth = dayjs(selectedMonth).add(1, 'M');
+        setSelectedMonth(newMonth);
     };
 
     return (
@@ -50,7 +50,7 @@ export const DatePickerMonth = () => {
                         padding: '6px 16px',
                         color: '#111111',
                         cursor: 'pointer',
-                    
+
                         '&:hover, &:focus': {
                             borderColor: '#477577',
                             outline: 'none',
@@ -58,7 +58,7 @@ export const DatePickerMonth = () => {
                         '.MuiInputBase-root': {
                             padding: ' 0px',
                             outline: 'none',
-                            '&:hover, &:focus': {      
+                            '&:hover, &:focus': {
                                 outline: 'none',
                                 border: 'none',
                             },

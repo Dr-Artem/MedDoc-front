@@ -34,7 +34,6 @@ export const LoginForm = () => {
         };
         const res = dispatch(login(user));
         res.then(el => {
-            console.log(el.payload);
             if (typeof el.payload === 'number') {
                 if (el.payload === 400) {
                     NotificationManager.warning('Введіть номер телефону та пароль');

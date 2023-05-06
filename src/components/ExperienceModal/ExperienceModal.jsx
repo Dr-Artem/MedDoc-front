@@ -1,20 +1,20 @@
-import { useState, useEffect } from 'react';
-import Autocomplete from '@mui/material/Autocomplete';
-import { Box, Input } from '@mui/material';
-import Button from '@mui/material/Button';
 import CloseIcon from '@mui/icons-material/Close';
+import { Box, Input } from '@mui/material';
+import Autocomplete from '@mui/material/Autocomplete';
+import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DemoItem } from '@mui/x-date-pickers/internals/demo';
 import dayjs from 'dayjs';
-import css from './ExperienceModal.module.css';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addUserExperience, updateUserExperience, getAllInstitution } from '../../redux/info/operation';
 import { selectInstitution } from 'redux/info/selectors';
+import { addUserExperience, getAllInstitution, updateUserExperience } from '../../redux/info/operation';
+import css from './ExperienceModal.module.css';
 
 const buttonStyle = {
     padding: { xs: '12px 24px', md: '13px 32px' },
@@ -131,7 +131,7 @@ export const ExperienceModal = ({ open, setModalOpen, title, doctorInfo, id }) =
                             <Autocomplete
                                 disablePortal
                                 id="combo-box-demo"
-                                options={institution}
+                                options={institution ? institution : []}
                                 value={selectedInstitution}
                                 onChange={(event, value) => {
                                     setSelectedInstitution(value);

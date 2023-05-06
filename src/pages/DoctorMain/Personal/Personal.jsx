@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { ExperienceBlock } from 'components/ExperienceBlock/ExperienceBlock';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserInfo } from 'redux/info/operation';
@@ -10,23 +11,28 @@ import { SpecializationBlock } from 'components/SpecializationBlock/Specializati
 import { WeekVisitsBlock } from 'components/WeekVisitsBlock/WeekVisitsBlock';
 import css from './Personal.module.css';
 
-export const Personal = () => {
+const Personal = () => {
     const dispatch = useDispatch();
     const doctorInfo = useSelector(selectUserInfo);
 
     useEffect(() => {
         dispatch(getUserInfo());
-    }, []);
+    }, [dispatch]);
+
     return (
         <>
             {doctorInfo && (
                 <>
                     <div className={css.DoctorInformation}>
-                        <ProfileBlockDoctore doctorInfo={doctorInfo} />
-                        <SpecializationBlock doctorInfo={doctorInfo} />
+                        <ProfileBlockDoctore userInfo={doctorInfo} />
+                        <SpecializationBlock
+                            specialization={doctorInfo.specialization}
+                            category={doctorInfo.category}
+                        />
                     </div>
                     <div className={css.pageAboutBlock}>
-                        <AboutBlock doctorInfo={doctorInfo} />
+                        <AboutBlock about={doctorInfo.about} />
+                        <ExperienceBlock doctorInfo={doctorInfo} />
                         <WeekVisitsBlock />
                     </div>
                 </>
@@ -34,3 +40,5 @@ export const Personal = () => {
         </>
     );
 };
+
+export default Personal;

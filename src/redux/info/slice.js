@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
-    getUserInfo,
-    getUserInfoById,
-    getAllUsersForRole,
-    updateUserInfo,
     addUserExperience,
-    updateUserExperience,
     deleteUserExperience,
     getAllInstitution,
+    getAllUsersForRole,
+    getUserInfo,
+    getUserInfoById,
+    updateUserExperience,
+    updateUserInfo,
 } from './operation';
 
 const initialState = {
@@ -32,7 +32,7 @@ const infoSlice = createSlice({
             state.userInfoById = action.payload;
         },
         [getUserInfoById.rejected](state, action) {
-            console.log(action.payload);
+            // console.log(action.payload);
         },
         [getAllUsersForRole.fulfilled](state, action) {
             if (action.meta.arg === 'Patient') {
@@ -43,45 +43,40 @@ const infoSlice = createSlice({
             }
         },
         [getAllUsersForRole.rejected](state, action) {
-            console.log(action.payload);
+            // console.log(action.payload);
         },
-        [updateUserInfo.fulfilled](state, action) {
-            console.log(action.payload);
 
+        [updateUserInfo.fulfilled](state, action) {
+            // console.log(action.payload);
             state.currentUserInfo = action.payload;
         },
         [updateUserInfo.rejected](state, action) {
-            console.log(action.payload);
+            console.log('rejected', action.payload);
         },
+
         [addUserExperience.fulfilled](state, action) {
             state.currentUserInfo = action.payload;
         },
         [addUserExperience.rejected](state, action) {
-            console.log(action.payload);
+            // console.log(action.payload);
         },
         [updateUserExperience.fulfilled](state, action) {
             state.currentUserInfo = action.payload;
         },
         [updateUserExperience.rejected](state, action) {
-            console.log(action.payload);
+            // console.log(action.payload);
         },
         [deleteUserExperience.fulfilled](state, action) {
             state.currentUserInfo = action.payload;
         },
         [deleteUserExperience.rejected](state, action) {
-            console.log(action.payload);
-        },
-        [updateUserInfo.fulfilled](state, action) {
-            console.log(action.payload);
-        },
-        [updateUserInfo.rejected](state, action) {
-            console.log('rejected', action.payload);
+            // console.log(action.payload);
         },
         [getAllInstitution.fulfilled](state, action) {
             state.allInstitution = action.payload;
         },
         [getAllInstitution.rejected](state, action) {
-            console.log(action.payload);
+            // console.log(action.payload);
         },
     },
 });

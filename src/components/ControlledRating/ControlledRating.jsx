@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import StarIcon from '@mui/icons-material/Star';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
-import StarIcon from '@mui/icons-material/Star';
+import { useState } from 'react';
 
 const defoltRate = 0;
 const ratingStyles = { fontWeight: '600', fontSize: '16px', lineHeight: '1.5', marginRight: '8px' };

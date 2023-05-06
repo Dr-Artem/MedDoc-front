@@ -23,7 +23,7 @@ const Header = () => {
                 <Logo />
                 <AuthNav user={user} />
             </div>
-            {patientLoc || doctortLoc ? (
+            {patientLoc || (doctortLoc && user) ? (
                 <InformationBlock
                     name={user.username}
                     imageUrl={

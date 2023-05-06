@@ -10,7 +10,7 @@ const patientRoutes = [
 ];
 
 const doctorRoutes = [
-    { path: '/doctor/personal/1', label: 'Personal page' },
+    { path: '/doctor/personal/64528ae541702d26c9b22991', label: 'Personal page' },
     { path: '/doctor/visits-history', label: 'Visit history' },
     { path: '/doctor/patients-list', label: 'List of patients' },
     { path: '/doctor/colleuges', label: 'Сolleagues' },
@@ -28,7 +28,6 @@ const indicatorStyles = {
 
 export const Navigation = () => {
     const { pathname } = useLocation();
-
     const [value, setValue] = useState(0);
 
     useEffect(() => {

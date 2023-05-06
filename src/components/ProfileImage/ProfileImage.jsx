@@ -1,10 +1,10 @@
-import { useDispatch } from 'react-redux';
 import { UilBrightnessPlus } from '@iconscout/react-unicons';
 import { IconButton } from '@mui/material';
-import plug from '../../images/ProfileBlock/plug.png';
-import css from './ProfileImage.module.css';
+import { useDispatch } from 'react-redux';
 import { updateAvatar } from 'redux/info/operation';
-const ProfileImage = ({ personalLoc }) => {
+import css from './ProfileImage.module.css';
+
+const ProfileImage = ({ avatar, personalLoc }) => {
     const dispatch = useDispatch();
 
     const handleFileChange = evt => {
@@ -19,7 +19,7 @@ const ProfileImage = ({ personalLoc }) => {
     return (
         <div style={{ position: 'relative' }}>
             <div className={css.imgWrapper}>
-                <img src={plug} alt="plug" />
+                <img src={avatar} alt="avatar" />
                 {personalLoc && (
                     <form onSubmit={onSubmit} encType="multipart/form-data">
                         <IconButton

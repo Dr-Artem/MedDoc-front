@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { UilFileAlt, UilLink, UilTrashAlt } from '@iconscout/react-unicons';
 import CloseIcon from '@mui/icons-material/Close';
 import { Box, Button, Icon, IconButton, Input, InputLabel, Modal, Typography } from '@mui/material';
@@ -8,8 +6,10 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DemoItem } from '@mui/x-date-pickers/internals/demo';
 import dayjs from 'dayjs';
-import style from './ModalEditPatientResult.module.css';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { uploadPDF } from 'redux/visits/operation';
+import style from './ModalEditPatientResult.module.css';
 
 export const ModalEditPatientResult = ({ open, setOpen }) => {
     const [file, setFile] = useState(null);
@@ -30,14 +30,12 @@ export const ModalEditPatientResult = ({ open, setOpen }) => {
 
     const handleSubmit = event => {
         event.preventDefault();
+        const file = event.target.files[0];
         const formData = new FormData();
-        if (file) {
-            formData.append('pdf', file);
-            dispatch(uploadPDF({ id: '64536d7e0d6fb48460bca28c', formData: formData }));
-            setFile(null);
-        }
+        formData.append('pdf', file);
+        dispatch(uploadPDF({ id: '64536d7e0d6fb48460bca28c', formData: formData }));
+        setFile(null);
     };
-
     const modalProperty = {
         position: 'absolute',
         top: '50%',
@@ -50,7 +48,7 @@ export const ModalEditPatientResult = ({ open, setOpen }) => {
         maxWidth: { sm: '335px', md: '500px' },
         width: '100%',
     };
-    console.log(`files123`, file);
+    // console.log(`files123`, file);
     return (
         <Modal open={open} onClose={() => setOpen(false)}>
             <Box sx={modalProperty}>

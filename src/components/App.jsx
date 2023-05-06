@@ -1,31 +1,26 @@
 import { useAuth } from 'hooks';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 
 import { AuthPage, ErrorPage, GridLayout, Layout, MainPage } from 'pages';
 import {
-    Colleagues,
+    // Colleagues,
     DoctorMain,
-    ListOfPatients,
+    // ListOfPatients,
     ListOfPatientsProfile,
-    Personal,
-    VisitHistory,
 } from 'pages/DoctorMain';
 import { PatientDoctors, PatientMain, PatientMedicalHistory, PatientVisitsToDoctor } from 'pages/PatientMain';
-import { getUserInfo } from 'redux/info/operation';
-import { getAllVisits } from 'redux/visits/operation';
+
+import { lazy } from 'react';
+
+const Colleagues = lazy(() => import('../pages/DoctorMain/Colleagues/Colleagues'));
+const ListOfPatients = lazy(() => import('../pages/DoctorMain/ListOfPatients/ListOfPatients'));
+const Personal = lazy(() => import('../pages/DoctorMain/Personal/Personal'));
+const VisitHistory = lazy(() => import('../pages/DoctorMain/VisitHistory/VisitHistory'));
+
 export const App = () => {
     const { user } = useAuth();
-    const dispatch = useDispatch();
-    useEffect(() => {
-        if (user) {
-            dispatch(getUserInfo());
-            // dispatch(getAllVisits());
-        }
-    }, [dispatch, user]);
 
     return (
         <>
@@ -67,6 +62,14 @@ export const App = () => {
                             }
                         />
                         <Route path="colleuges" element={<Colleagues />} />
+                        <Route
+                            path="colleuges/:id"
+                            element={
+                                <GridLayout>
+                                    <Personal />
+                                </GridLayout>
+                            }
+                        />
                     </Route>
                 </Route>
                 <Route

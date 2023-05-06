@@ -1,32 +1,37 @@
 import { UilSearch } from '@iconscout/react-unicons';
-import { Button, IconButton, Input } from '@mui/material';
+import { IconButton, Input } from '@mui/material';
 import BasicSelect from 'components/BasicSelect/BasicSelect';
 // import { useEffect, useRef } from 'react';
+import LinkViewProfile from 'components/LinkViewProfile/LinkViewProfile';
+import { ProfileBlockDoctore } from 'components/ProfileBlockDoctore/ProfileBlockDoctore';
 import UsersList from 'components/UsersList/UsersList';
 import debounce from 'lodash.debounce';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+// import { useNavigate } from 'react-router-dom';
 import { getAllUsersForRole } from 'redux/info/operation';
 import css from './Colleagues.module.css';
 
+const specializations = [
+    'Show all',
+    'Ophthalmologist',
+    'Surgeon',
+    'Therapist',
+    'Neurologist',
+    'Gynecologist',
+    'Endocrinologist',
+    'Psychiatrist',
+    'Psychotherapist',
+    'Otolaryngologist',
+];
+const categories = ['Show all', 'The first', 'The second', 'Higher'];
 const DEBOUNCE_DELAY = 300;
-export const Colleagues = () => {
-    const specializations = [
-        'Show all',
-        'Ophthalmologist',
-        'Surgeon',
-        'Therapist',
-        'Neurologist',
-        'Gynecologist',
-        'Endocrinologist',
-        'Psychiatrist',
-        'Psychotherapist',
-        'Otolaryngologist',
-    ];
-    const categories = ['Show all', 'The first', 'The second', 'Higher'];
+
+const Colleagues = () => {
     const [allDoctors, setAllDoctors] = useState([]);
     const [filteredByName, setFilteredByName] = useState([]);
     const dispatch = useDispatch();
+    // const navigate = useNavigate();
 
     useEffect(() => {
         dispatch(getAllUsersForRole('Doctor')).then(({ payload }) => {
@@ -34,13 +39,18 @@ export const Colleagues = () => {
             setFilteredByName(payload);
         });
         // eslint-disable-next-line
-    }, []);
+    }, [dispatch]);
 
     const handleFilterName = e => {
         const inputValue = e.target.value.trim();
         const filtered = allDoctors.filter(doctor => doctor.name.startsWith(inputValue));
         setFilteredByName(filtered);
     };
+
+    // const handleClick = event => {
+    //     console.log(event.target.id);
+    //     navigate(`/doctor/personal/${event.target.id}`, { replace: true });
+    // };
 
     return (
         <>
@@ -67,10 +77,12 @@ export const Colleagues = () => {
                 </div>
             </div>
             <UsersList listOfUsers={filteredByName}>
-                <Button variant="outlined" color="primary">
-                    view profile
-                </Button>
+                <ProfileBlockDoctore>
+                    <LinkViewProfile>view profile</LinkViewProfile>
+                </ProfileBlockDoctore>
             </UsersList>
         </>
     );
 };
+
+export default Colleagues;

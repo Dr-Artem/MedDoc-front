@@ -1,7 +1,6 @@
 import StarIcon from '@mui/icons-material/Star';
 import { Typography } from '@mui/material';
 import Rating from '@mui/material/Rating';
-import { Badge } from 'components/Badge/Badge';
 import { DatePickerMonth } from 'components/DatePickers/DatePickerMonth';
 import { ModalEditRating } from 'components/ModalEditRating/ModalEditRating';
 import { useState } from 'react';

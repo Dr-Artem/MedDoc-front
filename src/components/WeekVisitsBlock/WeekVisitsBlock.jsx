@@ -2,18 +2,16 @@ import CloseIcon from '@mui/icons-material/Close';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { Modal } from '@mui/material';
+import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Card from 'components/Card/Card';
 import { DatePickers } from 'components/DatePickers/DatePickers';
-import React, { useState } from 'react';
-import Avatar from '../../Image/Avatar.png';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectUserAppointments } from 'redux/appointment/selectors';
-import { getCurrentUserAppointments } from 'redux/appointment/operation';
-import { useEffect } from 'react';
-import css from './WeekVisitsBlock.module.css';
 import dayjs from 'dayjs';
-import Divider from '@mui/material/Divider';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { getCurrentUserAppointments } from 'redux/appointment/operation';
+import Avatar from '../../Image/Avatar.png';
+import css from './WeekVisitsBlock.module.css';
 
 export const WeekVisitsBlock = () => {
     const [selectedDate, setSelectedDate] = useState(dayjs(Date.now()).format('DD.MM.YYYY'));
@@ -22,19 +20,15 @@ export const WeekVisitsBlock = () => {
     const [selectedItem, setSelectedItem] = useState('');
     const [dateVisits, setDateVisits] = useState([]);
 
-    // console.log(selectedItem);
-
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getCurrentUserAppointments()).then(data => {
-            // console.log(data.payload);
             setDateVisits(data.payload);
         });
     }, [dispatch]);
 
     const filteredArray = dateVisits.filter(item => item.date === selectedDate);
-    // console.log(filteredArray);
 
     const handleDateChange = formattedDate => {
         setSelectedDate(formattedDate);
@@ -61,19 +55,13 @@ export const WeekVisitsBlock = () => {
                     </div>
 
                     {!isVisitsVisible && (
-                        <IconButton>
-                            <KeyboardArrowDownIcon
-                                sx={{ fontSize: '28px', color: '#111111' }}
-                                onClick={handleArrowClick}
-                            />
+                        <IconButton onClick={handleArrowClick}>
+                            <KeyboardArrowDownIcon sx={{ fontSize: '28px', color: '#111111' }} />
                         </IconButton>
                     )}
                     {isVisitsVisible && (
-                        <IconButton>
-                            <KeyboardArrowUpIcon
-                                sx={{ fontSize: '28px', color: '#111111' }}
-                                onClick={handleArrowClick}
-                            />
+                        <IconButton onClick={handleArrowClick}>
+                            <KeyboardArrowUpIcon sx={{ fontSize: '28px', color: '#111111' }} />
                         </IconButton>
                     )}
                 </div>
