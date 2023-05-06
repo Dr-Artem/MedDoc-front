@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/MedDoc-front/static/css/main.4a7bc326.css",
-    "main.js": "/MedDoc-front/static/js/main.3f623d99.js",
+    "main.css": "/MedDoc-front/static/css/main.ffa5b4bd.css",
+    "main.js": "/MedDoc-front/static/js/main.53e703dc.js",
     "static/css/948.b098aa19.chunk.css": "/MedDoc-front/static/css/948.b098aa19.chunk.css",
     "static/js/948.8902f232.chunk.js": "/MedDoc-front/static/js/948.8902f232.chunk.js",
     "static/css/978.e229feb0.chunk.css": "/MedDoc-front/static/css/978.e229feb0.chunk.css",
-    "static/js/978.270a7b02.chunk.js": "/MedDoc-front/static/js/978.270a7b02.chunk.js",
+    "static/js/978.cb72f310.chunk.js": "/MedDoc-front/static/js/978.cb72f310.chunk.js",
     "static/css/199.b65d2aa6.chunk.css": "/MedDoc-front/static/css/199.b65d2aa6.chunk.css",
-    "static/js/199.b8f3693d.chunk.js": "/MedDoc-front/static/js/199.b8f3693d.chunk.js",
+    "static/js/199.f4f5b29c.chunk.js": "/MedDoc-front/static/js/199.f4f5b29c.chunk.js",
     "static/css/820.ff1f6735.chunk.css": "/MedDoc-front/static/css/820.ff1f6735.chunk.css",
     "static/js/820.ed009000.chunk.js": "/MedDoc-front/static/js/820.ed009000.chunk.js",
     "static/media/meet.png": "/MedDoc-front/static/media/meet.b49f07d494c26dd6ef32.png",
@@ -25,19 +25,19 @@
     "static/media/notification.ttf?s3g3t9": "/MedDoc-front/static/media/notification.c5d9251ea82e42f75381.ttf",
     "index.html": "/MedDoc-front/index.html",
     "static/media/dot.svg": "/MedDoc-front/static/media/dot.dd21691bee277452c908.svg",
-    "main.4a7bc326.css.map": "/MedDoc-front/static/css/main.4a7bc326.css.map",
-    "main.3f623d99.js.map": "/MedDoc-front/static/js/main.3f623d99.js.map",
+    "main.ffa5b4bd.css.map": "/MedDoc-front/static/css/main.ffa5b4bd.css.map",
+    "main.53e703dc.js.map": "/MedDoc-front/static/js/main.53e703dc.js.map",
     "948.b098aa19.chunk.css.map": "/MedDoc-front/static/css/948.b098aa19.chunk.css.map",
     "948.8902f232.chunk.js.map": "/MedDoc-front/static/js/948.8902f232.chunk.js.map",
     "978.e229feb0.chunk.css.map": "/MedDoc-front/static/css/978.e229feb0.chunk.css.map",
-    "978.270a7b02.chunk.js.map": "/MedDoc-front/static/js/978.270a7b02.chunk.js.map",
+    "978.cb72f310.chunk.js.map": "/MedDoc-front/static/js/978.cb72f310.chunk.js.map",
     "199.b65d2aa6.chunk.css.map": "/MedDoc-front/static/css/199.b65d2aa6.chunk.css.map",
-    "199.b8f3693d.chunk.js.map": "/MedDoc-front/static/js/199.b8f3693d.chunk.js.map",
+    "199.f4f5b29c.chunk.js.map": "/MedDoc-front/static/js/199.f4f5b29c.chunk.js.map",
     "820.ff1f6735.chunk.css.map": "/MedDoc-front/static/css/820.ff1f6735.chunk.css.map",
     "820.ed009000.chunk.js.map": "/MedDoc-front/static/js/820.ed009000.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a7bc326.css",
-    "static/js/main.3f623d99.js"
+    "static/css/main.ffa5b4bd.css",
+    "static/js/main.53e703dc.js"
   ]
 }
