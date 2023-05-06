@@ -24,7 +24,7 @@ export const ModalEditPatientResult = ({ open, setOpen }) => {
         setFile(event.target.files[0]);
     };
 
-    const handleFileDelete = i => {
+    const handleFileDelete = () => {
         setFile(null);
     };
 

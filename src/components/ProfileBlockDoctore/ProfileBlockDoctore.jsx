@@ -38,7 +38,7 @@ export const ProfileBlockDoctore = ({ children, doctorInfo }) => {
 
                         <li className={css.item}>
                             Date of birth:
-                            <p className={css.data}>{moment.utc(moment(doctorInfo.birthday).format('DD.MM.YYYY'))}</p>
+                            <p className={css.data}>{moment(doctorInfo.birthday).format('DD.MM.YYYY')}</p>
                         </li>
                         <li className={css.item}>
                             Phone number:<p className={css.data}>{doctorInfo.number}</p>
