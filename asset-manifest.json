@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/MedDoc-front/static/css/main.f192cf03.css",
-    "main.js": "/MedDoc-front/static/js/main.29803b55.js",
-    "static/css/948.b098aa19.chunk.css": "/MedDoc-front/static/css/948.b098aa19.chunk.css",
-    "static/js/948.d2ce7db8.chunk.js": "/MedDoc-front/static/js/948.d2ce7db8.chunk.js",
-    "static/css/978.e229feb0.chunk.css": "/MedDoc-front/static/css/978.e229feb0.chunk.css",
-    "static/js/978.b09eb4a1.chunk.js": "/MedDoc-front/static/js/978.b09eb4a1.chunk.js",
-    "static/css/199.04a4f0f5.chunk.css": "/MedDoc-front/static/css/199.04a4f0f5.chunk.css",
-    "static/js/199.bce7ebcf.chunk.js": "/MedDoc-front/static/js/199.bce7ebcf.chunk.js",
-    "static/css/288.91bec9bc.chunk.css": "/MedDoc-front/static/css/288.91bec9bc.chunk.css",
-    "static/js/288.cc345723.chunk.js": "/MedDoc-front/static/js/288.cc345723.chunk.js",
+    "main.css": "/MedDoc-front/static/css/main.78349058.css",
+    "main.js": "/MedDoc-front/static/js/main.c8b39b30.js",
+    "static/css/948.7b7632f0.chunk.css": "/MedDoc-front/static/css/948.7b7632f0.chunk.css",
+    "static/js/948.58db7fa8.chunk.js": "/MedDoc-front/static/js/948.58db7fa8.chunk.js",
+    "static/css/978.e260848d.chunk.css": "/MedDoc-front/static/css/978.e260848d.chunk.css",
+    "static/js/978.0cad01e9.chunk.js": "/MedDoc-front/static/js/978.0cad01e9.chunk.js",
+    "static/css/199.ba2f212d.chunk.css": "/MedDoc-front/static/css/199.ba2f212d.chunk.css",
+    "static/js/199.e8862b6f.chunk.js": "/MedDoc-front/static/js/199.e8862b6f.chunk.js",
+    "static/css/288.331a096a.chunk.css": "/MedDoc-front/static/css/288.331a096a.chunk.css",
+    "static/js/288.703a27d8.chunk.js": "/MedDoc-front/static/js/288.703a27d8.chunk.js",
     "static/media/meet.png": "/MedDoc-front/static/media/meet.b49f07d494c26dd6ef32.png",
     "static/media/meet_mobile.png": "/MedDoc-front/static/media/meet_mobile.e5d5e588982f17ec32cc.png",
     "static/media/card.png": "/MedDoc-front/static/media/card.5b81981e37905248a4f0.png",
@@ -25,19 +25,19 @@
     "static/media/notification.ttf?s3g3t9": "/MedDoc-front/static/media/notification.c5d9251ea82e42f75381.ttf",
     "index.html": "/MedDoc-front/index.html",
     "static/media/dot.svg": "/MedDoc-front/static/media/dot.dd21691bee277452c908.svg",
-    "main.f192cf03.css.map": "/MedDoc-front/static/css/main.f192cf03.css.map",
-    "main.29803b55.js.map": "/MedDoc-front/static/js/main.29803b55.js.map",
-    "948.b098aa19.chunk.css.map": "/MedDoc-front/static/css/948.b098aa19.chunk.css.map",
-    "948.d2ce7db8.chunk.js.map": "/MedDoc-front/static/js/948.d2ce7db8.chunk.js.map",
-    "978.e229feb0.chunk.css.map": "/MedDoc-front/static/css/978.e229feb0.chunk.css.map",
-    "978.b09eb4a1.chunk.js.map": "/MedDoc-front/static/js/978.b09eb4a1.chunk.js.map",
-    "199.04a4f0f5.chunk.css.map": "/MedDoc-front/static/css/199.04a4f0f5.chunk.css.map",
-    "199.bce7ebcf.chunk.js.map": "/MedDoc-front/static/js/199.bce7ebcf.chunk.js.map",
-    "288.91bec9bc.chunk.css.map": "/MedDoc-front/static/css/288.91bec9bc.chunk.css.map",
-    "288.cc345723.chunk.js.map": "/MedDoc-front/static/js/288.cc345723.chunk.js.map"
+    "main.78349058.css.map": "/MedDoc-front/static/css/main.78349058.css.map",
+    "main.c8b39b30.js.map": "/MedDoc-front/static/js/main.c8b39b30.js.map",
+    "948.7b7632f0.chunk.css.map": "/MedDoc-front/static/css/948.7b7632f0.chunk.css.map",
+    "948.58db7fa8.chunk.js.map": "/MedDoc-front/static/js/948.58db7fa8.chunk.js.map",
+    "978.e260848d.chunk.css.map": "/MedDoc-front/static/css/978.e260848d.chunk.css.map",
+    "978.0cad01e9.chunk.js.map": "/MedDoc-front/static/js/978.0cad01e9.chunk.js.map",
+    "199.ba2f212d.chunk.css.map": "/MedDoc-front/static/css/199.ba2f212d.chunk.css.map",
+    "199.e8862b6f.chunk.js.map": "/MedDoc-front/static/js/199.e8862b6f.chunk.js.map",
+    "288.331a096a.chunk.css.map": "/MedDoc-front/static/css/288.331a096a.chunk.css.map",
+    "288.703a27d8.chunk.js.map": "/MedDoc-front/static/js/288.703a27d8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f192cf03.css",
-    "static/js/main.29803b55.js"
+    "static/css/main.78349058.css",
+    "static/js/main.c8b39b30.js"
   ]
 }
